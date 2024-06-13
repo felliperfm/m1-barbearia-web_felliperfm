@@ -59,16 +59,13 @@ function criaPedido(nomeCliente, corteId, barbaId) {
 };
 
 function atualizarServico(lista, id, valor, tipo) {
-    let fromIdToIndex = 0;
-    for (i=0; i<barbearia[lista].length; i++) {
-        if (barbearia[lista][i].id == id) {
-            fromIdToIndex = i
+    for (i = 0; i < lista.length; i++) {
+        if (lista[i].id == id) {
+            lista[i].valor = valor;
+            lista[i].tipo = tipo;
         }
     }
-    console.log(fromIdToIndex)
-    barbearia[lista][fromIdToIndex].valor = valor;
-    barbearia[lista][fromIdToIndex].tipo = tipo;
-    return barbearia[lista]
+    return lista
 };
 
 function calculaTotal(pedido) {
